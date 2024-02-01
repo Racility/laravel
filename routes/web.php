@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\HitungController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/tes/{name?}', function ($name = null) {
-    return $name;
-});
+
+Route::get('/daftar',[HitungController::class, 'daftar']);
+Route::get('/kirim',[HitungController::class, 'kirim']);
+
+// Route::get('/tes/{name?}', function ($name = null) {
+//     return $name;
+// });
