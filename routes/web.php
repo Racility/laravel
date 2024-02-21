@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\HitungController;
 
@@ -17,6 +18,8 @@ use app\Http\Controllers\HitungController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/daftar',[HitungController::class, 'daftar']);
 Route::get('/kirim',[HitungController::class, 'kirim']);
