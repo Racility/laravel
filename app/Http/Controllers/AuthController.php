@@ -62,7 +62,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('login');
+        return redirect('/');
     }
     public function registerProcess(Request $request)
     {
@@ -76,6 +76,6 @@ class AuthController extends Controller
 
         Session::flash('status', 'success');
         Session::flash('message', 'Regist succes. Wait admin for approval');
-        return redirect('register');
+        return redirect('/login');
     }
 }
